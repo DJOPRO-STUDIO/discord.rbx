@@ -30,18 +30,18 @@ local Embed = discord_rbx.Embed
 - After everything been initialized, let's send a message with a webhook on Discord:
 ```lua
 local Mywebhook = Webhook.new("WEBHOOK_URL")
-webhook_A:SendMessage("Hi!, this is a message from My Roblox Game!")
+Mywebhook:SendMessage("Hi!, this is a message from My Roblox Game!")
 ```
 - Also, you can send a link of an image by doing:
 ```lua
 local Mywebhook = Webhook.new("WEBHOOK_URL")
-webhook_A:SendMessage("IMAGE_LINK")
+Mywebhook:SendMessage("IMAGE_LINK")
 ```
 - You can use the Roblox Image ID to send the link of that image by doing :
 ```lua
 local Mywebhook = Webhook.new("WEBHOOK_URL")
 local link_image = Discord.image.from_robloxID(91060381650567)
-webhook_A:SendMessage(link_image)
+Mywebhook:SendMessage(link_image)
 ```
 > [!NOTE]
 > The `Discord.image.from_robloxID()` uses a proxy to work, so if it doesn't, you can get the current proxy or set a new one by doing:
@@ -52,4 +52,29 @@ webhook_A:SendMessage(link_image)
 >
 > -- SET A PROXY --
 > Discord.set_image_proxy("PROXY_LINK")
+> ```
+
+- Now let's send a Custom Embed:
+```lua
+local MyEmbed = Embed.new("My Title","My Description",Discord.color.yellow())
+local Mywebhook = Webhook.new("WEBHOOK_URL")
+Mywebhook:SendMessage("",MyEmbed)
+```
+
+> [!NOTE]
+> There are several colors that are available:
+> ```lua
+> Discord.color.green()
+> Discord.color.red()
+> Discord.color.blue()
+> Discord.color.yellow()
+> Discord.color.cyan()
+> Discord.color.pink()
+> Discord.color.white()
+> Discord.color.black()
+> ```
+>
+> But If you didn't find the color that you need to, Just use RGB instead:
+> ```lua
+> Discord.color.from_rgb(255,255,255) -- White
 > ```
