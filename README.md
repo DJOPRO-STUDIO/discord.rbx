@@ -33,7 +33,7 @@ local Mywebhook = Webhook.new("WEBHOOK_URL")
 webhook_A:SendMessage("IMAGE_LINK")
 ```
 - You can use the Roblox Image ID to send the link of that image by doing :
-```
+```lua
 local Mywebhook = Webhook.new("WEBHOOK_URL")
 local link_image = Discord.image.from_robloxID(91060381650567)
 webhook_A:SendMessage(link_image)
