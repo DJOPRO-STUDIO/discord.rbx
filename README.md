@@ -57,6 +57,12 @@ Mywebhook:SendMessage(link_image)
 - Now let's send a Custom Embed:
 ```lua
 local MyEmbed = Embed.new("My Title","My Description",Discord.color.yellow())
+MyEmbed:addField("Name Field","Description",true) -- last argument is for inline statement
+MyEmbed:addField("Name Field 1","Description 1",false) -- last argument is for inline statement
+MyEmbed:addThumbnails("URL_IMAGE")
+MyEmbed:addImage("URL_IMAGE")
+MyEmbed:addFooter("Text Footer")
+
 local Mywebhook = Webhook.new("WEBHOOK_URL")
 Mywebhook:SendMessage("",MyEmbed)
 ```
