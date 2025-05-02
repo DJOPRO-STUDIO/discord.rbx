@@ -91,8 +91,10 @@ embedA = Embed.new("My Title","My Description",Discord.color.yellow())
 embedB = Embed.new("My Title","My Description",Discord.color.yellow())
 embedC = Embed.new("My Title","My Description",Discord.color.yellow())
 
+embeds_joined = Embed.join({embedA,embedB,embedC})
+
 local Mywebhook = Webhook.new("WEBHOOK_URL")
-Mywebhook:SendMessage("",{embedA,embedB,embedC})
+Mywebhook:SendMessage("",embeds_joined)
 ```
 
 - Final Example:
