@@ -84,3 +84,32 @@ Mywebhook:SendMessage("",MyEmbed)
 > ```lua
 > Discord.color.from_rgb(255,255,255) -- White
 > ```
+
+- If you want to send multiple embeds at the same time, you can by doing:
+```lua
+embedA = Embed.new("My Title","My Description",Discord.color.yellow())
+embedB = Embed.new("My Title","My Description",Discord.color.yellow())
+embedC = Embed.new("My Title","My Description",Discord.color.yellow())
+
+local Mywebhook = Webhook.new("WEBHOOK_URL")
+Mywebhook:SendMessage("",{embedA,embedB,embedC})
+```
+
+- Final Example:
+```lua
+local discord_rbx = require(85961583641003)
+
+local Discord = discord_rbx.Discord
+local Webhook = discord_rbx.Webhook
+local Embed = discord_rbx.Embed
+
+local MyEmbed = Embed.new("My Title","My Description",Discord.color.from_rgb(255,255,255))
+MyEmbed:addField("Name Field","Description",true)
+MyEmbed:addField("Name Field 1","Description 1",false)
+MyEmbed:addThumbnails("URL_IMAGE")
+MyEmbed:addImage(Discord.image.from_robloxID(91060381650567))
+MyEmbed:addFooter("Text Footer")
+
+local Mywebhook = Webhook.new("WEBHOOK_URL")
+Mywebhook:SendMessage("Hi, a normal text on the same message !",MyEmbed)
+```
