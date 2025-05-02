@@ -8,6 +8,11 @@
 2. After the game editor loads, On the top, click on Home > Settings > Security
 3. Finally , Enable the HTTPService by clicking on the switch.
 
+## Fonctionalities :
+- Send Normal Messages by Webhook
+- Send Embeds by Webhook
+- Extract Image Link from the Roblox Image ID 
+
 ## Usage :
 > [!NOTE]
 > **discord.rbx** can work only with server-side scripts because of the limitation on the HTTPService
